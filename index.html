@@ -1,0 +1,111 @@
+-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript colorChanger() Hands-On</title>
+    <style>
+        body {
+            background: linear-gradient(#1FA0FF, #12DAFB, #A7FDCC);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            background-color:#fffacd;
+            z-index: -1;
+        }
+
+        body:square :before {
+            left: 0;
+        }
+        body:square :after {
+            right: 0;
+        }
+
+        #container {
+            text-align: center;
+            border: 4px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px; 
+            width: 80%; 
+            margin: auto; /
+            position: relative; 
+            z-index: 1; 
+        }
+
+        #titleContainer {
+            background: linear-gradient(#1FA0FF, #12DAFB, #A7FDCC);
+            padding: 10px;
+            color: black;
+            border-radius: 10px;
+            border: 3px solid #000;
+        }
+
+        #colorDiv {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            margin: 20px;
+            border-radius: 10px;
+            border: 3px solid #000;
+            transition: background-color 0.5s ease;
+            display: inline-block;
+        }
+        
+        #colorButton {
+            margin-top: 20px;
+            background: linear-gradient(#ff6a00, #ffbb00); 
+            color: black; 
+            padding: 15px 30px; 
+            border: none; 
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            border: 3px solid #000;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="titleContainer">
+            <h1>JavaScript colorChanger() Hands-On</h1>
+        </div>
+
+        <button id="colorButton">Click Me</button>
+        <div id="colorDiv"></div>
+    </div>
+
+    <script>
+        function changeColor() {
+            var colorDiv = document.getElementById("colorDiv");
+
+            if (colorDiv.style.backgroundColor === "green") {
+                colorDiv.style.backgroundColor = "blue";
+            } else {
+                colorDiv.style.backgroundColor = "green";
+            }
+        }
+
+        document.getElementById("colorButton").addEventListener("click", changeColor);
+    </script>
+</body>
+</html>
+-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•
